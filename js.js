@@ -1,26 +1,8 @@
 let myLibrary = [];
 
-function Book(title, author, pages, read) {
-    this.title = title
-    this.author = author
-    this.pages = pages
-    this.read = read
-
-    this.info = function() {
-        let container = document.querySelector('#books')
-        let div = document.createElement('div');
-        div.innerHTML = `${title}, ${author}, ${pages}, ${read}`;
-        div.style.border = "2px solid black";
-        div.style.backgroundColor = "navy";
-        div.style.color = "white";
-        container.appendChild(div);
-    }
+function Book() {
     
 }
-
-const theHobbit = new Book('The Hobbit', 'J.R.R Tolkien', '295 Pages', 'Not Read Yet')
-theHobbit.info();
-
 
 function addBookToLibrary() {
     
@@ -47,3 +29,47 @@ window.onclick = function(event) {
     }
 }
 
+document.getElementById("getBook").addEventListener("submit", function(event) {
+    //Prevents form from submitting and refreshing
+    event.preventDefault();
+
+    //Gets the form data
+    const title = document.getElementById("booktitle").value;
+    const author = document.getElementById("bookauthor").value;
+    const pages = document.getElementById("bookpages").value;
+    const read = document.getElementById("bookread").value;
+
+    //Make a new object
+    const book = { title, author, pages, read };
+
+    //Function to display book on page
+    displayBook(book);
+
+    //Reset form
+    document.getElementById("getBook").reset();
+
+    //Closes form
+    closeForm();
+})
+
+function displayBook(book) {
+    const bookList = document.getElementById("books");
+
+    //Create element to display book
+    const bookContainer = document.createElement("div");
+    bookContainer.classList.add("book");
+    const bookDetails = document.createElement("p");
+    bookDetails.innerHTML = `Title: ${book.title}, Author: ${book.author}, Pages: ${book.pages}, Read: ${book.read}`;
+    const deleteButton = document.createElement("button");
+    deleteButton.textContent = "Delete";
+    deleteButton.addEventListener("click", function(){
+        //Removes book when Delete is clicked
+        bookContainer.remove();
+    });
+
+    //Displays the details and button to container
+    bookContainer.appendChild(bookDetails);
+    bookContainer.appendChild(deleteButton);
+
+    bookList.appendChild(bookContainer);
+}
