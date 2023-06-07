@@ -1,13 +1,3 @@
-let myLibrary = [];
-
-function Book() {
-    
-}
-
-function addBookToLibrary() {
-    
-}
-
 // Grabs form under the ID getBook
 const form = document.getElementById("getBook");
 
@@ -58,6 +48,7 @@ function displayBook(book) {
     //Create element to display book
     const bookContainer = document.createElement("div");
     bookContainer.classList.add("book");
+
     const bookDetails = document.createElement("p");
     bookDetails.innerHTML = `Title: ${book.title}, Author: ${book.author}, Pages: ${book.pages}, Read: ${book.read}`;
     const deleteButton = document.createElement("button");
@@ -67,9 +58,22 @@ function displayBook(book) {
         bookContainer.remove();
     });
 
+    // Change the status of read
+    const readStatus = document.createElement("button");
+    readStatus.textContent = "Read?";
+    readStatus.addEventListener("click", function(){
+        if(book.read === "Yes") {
+            book.read = "No";
+        } else {
+            book.read = "Yes";
+        }
+        bookDetails.innerHTML = `Title: ${book.title}, Author: ${book.author}, Pages: ${book.pages}, Read: ${book.read}`;
+    })
+
     //Displays the details and button to container
     bookContainer.appendChild(bookDetails);
     bookContainer.appendChild(deleteButton);
+    bookContainer.appendChild(readStatus)
 
     bookList.appendChild(bookContainer);
 }
