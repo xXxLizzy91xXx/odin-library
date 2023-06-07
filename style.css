@@ -5,3 +5,8 @@
     padding: 0;
     font-family: 'Rubik', Helvetica, sans-serif;
 }
+
+/* Hides the form when page is loaded */
+#getBook {
+    display: none;
+}
