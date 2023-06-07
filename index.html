@@ -13,7 +13,37 @@
     </header>
 
     <main>
-        
+        <div class="container">
+
+            <button onclick="openForm()" class="addbtn">Add Book</button>
+            <br>
+            <br>
+            <div class="formcontainer">
+                <form id="getBook" name="addbook">
+                    <label for="booktitle">Title: </label>
+                    <input type="text" name="booktitle" id="booktitle">
+                    <br>
+                    <label for="bookauthor">Author: </label>
+                    <input type="text" name="bookauthor" id="bookauthor">
+                    <br>
+                    <label for="bookpages">How Many Pages: </label>
+                    <input type="text" name="bookpages" id="bookpages">
+                    <br>
+                    <label for="bookread">Have you read?</label>
+                    <select name="bookread" id="bookread">
+                        <option value="yes">Yes</option>
+                        <option value="no">No</option>
+                    </select>
+                    <br>
+                    <input type="submit" value="Submit">
+                    <button type="button" class="btncancel" onclick="closeForm()">Close</button>
+                </form>
+            </div>
+
+            <div id="books">
+
+            </div>
+        </div>
     </main>
 
     <footer>
