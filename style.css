@@ -6,6 +6,55 @@
     font-family: 'Rubik', Helvetica, sans-serif;
 }
 
+header {
+    display: flex;
+    justify-content: center;
+    background-color: rgb(194, 192, 192);
+    padding: 0.6rem;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1.25rem;
+}
+
+.btn {
+    outline: none;
+    border: none;
+    width: 1.8rem;
+    height: 1.8rem;
+    background: transparent;
+    color: white;
+    position: relative;
+    font-size: 1rem;
+}
+
+.addbtn {
+    background: linear-gradient(336deg, rgba(196,7,148,1) 23%, rgba(0,212,255,1) 100%);
+    border-radius: 50%;
+    height: 3.1rem;
+    width: 3.1rem;
+    font-size: 1.5rem;
+    background-size: 300% 100%;
+    transition: transform 0.5s;
+}
+
+.addbtn:hover {
+    cursor: pointer;
+    background-position: 100% 0;
+    transition: all .4s ease-in-out;
+    -moz-transition: all .4s ease-in-out;
+    -o-transition: all .4s ease-in-out;
+    -webkit-transition: all .4s ease-in-out;
+    transform: rotate(90deg) scale(1.2);
+}
+
+.addbtn:focus {
+    outline: none;
+}
+
 /* Hides the form when page is loaded */
 #getBook {
     display: none;
