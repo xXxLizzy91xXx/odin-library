@@ -49,10 +49,16 @@ function displayBook(book) {
     const bookContainer = document.createElement("div");
     bookContainer.classList.add("book");
 
+    //Create para to display books
     const bookDetails = document.createElement("p");
     bookDetails.innerHTML = `Title: ${book.title}, Author: ${book.author}, Pages: ${book.pages}, Read: ${book.read}`;
+    
+    // Create btn
     const deleteButton = document.createElement("button");
-    deleteButton.textContent = "Delete";
+    // Text in btn
+    deleteButton.classList.add("deletebtn");
+    // Assign class to btn for style
+    deleteButton.innerHTML = '<i class="fa-solid fa-trash"></i>';
     deleteButton.addEventListener("click", function(){
         //Removes book when Delete is clicked
         bookContainer.remove();
