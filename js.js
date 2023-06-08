@@ -55,9 +55,8 @@ function displayBook(book) {
     
     // Create btn
     const deleteButton = document.createElement("button");
-    // Text in btn
-    deleteButton.classList.add("deletebtn");
     // Assign class to btn for style
+    deleteButton.classList.add("deletebtn");
     deleteButton.innerHTML = '<i class="fa-solid fa-trash"></i>';
     deleteButton.addEventListener("click", function(){
         //Removes book when Delete is clicked
@@ -66,6 +65,7 @@ function displayBook(book) {
 
     // Change the status of read
     const readStatus = document.createElement("button");
+    readStatus.classList.add("readbtn");
     readStatus.textContent = "Read?";
     readStatus.addEventListener("click", function(){
         if(book.read === "Yes") {
