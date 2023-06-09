@@ -21,23 +21,29 @@
             <br>
             <br>
             <div id="modal" class="formcontainer">
-                <form id="getBook" name="addbook">
-                    <label for="booktitle">Title: </label>
-                    <input type="text" name="booktitle" id="booktitle">
-                    <br>
-                    <label for="bookauthor">Author: </label>
-                    <input type="text" name="bookauthor" id="bookauthor">
-                    <br>
-                    <label for="bookpages">How Many Pages: </label>
-                    <input type="number" name="bookpages" id="bookpages">
-                    <br>
-                    <label for="bookread">Have you read?</label>
-                    <select name="bookread" id="bookread">
-                        <option value="Yes">Yes</option>
-                        <option value="No">No</option>
-                    </select>
-                    <br>
-                    <input type="submit" value="Submit">
+                <form class="form" id="getBook" name="addbook">
+                    <h2 class="formtitle">Add your book</h2>
+                    <div class="inputgroup">
+                        <label  for="booktitle">Title: </label>
+                        <input type="text" name="booktitle" id="booktitle">
+                    </div>
+                    <div class="inputgroup">
+                        <label for="bookauthor">Author: </label>
+                        <input type="text" name="bookauthor" id="bookauthor">
+                    </div>
+                    <div class="inputgroup">
+                        <label for="bookpages">How Many Pages: </label>
+                        <input type="number" name="bookpages" id="bookpages">
+                    </div>
+                    <div class="inputgroup read">
+                        <label for="bookread">Have you read?</label>
+                        <select name="bookread" id="bookread">
+                            <option value="Yes">Yes</option>
+                            <option value="No">No</option>
+                        </select>
+                    </div>
+
+                    <input class="submit" type="submit" value="Submit">
                     <button type="button" class="btncancel" onclick="closeForm()">&times;</button>
                 </form>
             </div>
