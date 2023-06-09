@@ -1,25 +1,24 @@
-// Grabs form under the ID getBook
-const form = document.getElementById("getBook");
+// Grabs form
+const form = document.getElementById("modal");
 
 // When 'Add Book' button is clicked- this function opens the form
 function openForm(){
     form.style.display = "block";
 }
 
-// When 'Close' button is clicked this function closes the form
+// Closes the form when the button is clicked
 function closeForm() {
     form.style.display = "none";
 }
 
 // If user clicks outside the form box the form closes
 window.onclick = function(event) {
-    let modal = document.getElementById("getBook");
-    if(event.target === modal) {
+    if(event.target === form) {
         closeForm();
     }
 }
 
-document.getElementById("getBook").addEventListener("submit", function(event) {
+document.getElementById("modal").addEventListener("submit", function(event) {
     //Prevents form from submitting and refreshing
     event.preventDefault();
 
@@ -36,7 +35,7 @@ document.getElementById("getBook").addEventListener("submit", function(event) {
     displayBook(book);
 
     //Reset form
-    document.getElementById("getBook").reset();
+    document.getElementById("modal").reset();
 
     //Closes form
     closeForm();
