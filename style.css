@@ -86,8 +86,29 @@ footer {
     left: 0;
     bottom: 0;
     width: 100%;
+    height: 100px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: 
+        "copy copy copy copy"
+        "brand brand brand brand";
+    align-items: center;
 }
 
 .fa-brands {
     color: black;
+    margin: 5px 10px;
+}
+
+.fa-brands:hover {
+    background-color: #0000005d;
+    font-size: 18px;
+}
+
+.copy{
+    grid-area: copy;
+}
+
+.brand {
+    grid-area: brand;
 }
