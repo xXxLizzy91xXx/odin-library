@@ -18,7 +18,7 @@ window.onclick = function(event) {
     }
 }
 
-document.getElementById("modal").addEventListener("submit", function(event) {
+document.getElementById("getBook").addEventListener("submit", function(event) {
     //Prevents form from submitting and refreshing
     event.preventDefault();
 
@@ -35,7 +35,7 @@ document.getElementById("modal").addEventListener("submit", function(event) {
     displayBook(book);
 
     //Reset form
-    document.getElementById("modal").reset();
+    document.getElementById("getBook").reset();
 
     //Closes form
     closeForm();
