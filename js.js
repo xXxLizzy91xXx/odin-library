@@ -50,6 +50,8 @@ function displayBook(book) {
 
     //Create para to display books
     const bookDetails = document.createElement("p");
+    bookDetails.classList.add("booklist");
+    
     bookDetails.innerHTML = `Title: ${book.title}, Author: ${book.author}, Pages: ${book.pages}, Read: ${book.read}`;
     
     // Create btn
